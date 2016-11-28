@@ -58,7 +58,7 @@ module Fluent
           :proxy_password => @proxy_password,
           :params => @params
         }
-        Engine.emit(@tag, Engine.now, get_status(record,args))
+        router.emit(@tag, Engine.now, get_status(record,args))
         break if @end_flag
       end
     rescue TypeError => ex
